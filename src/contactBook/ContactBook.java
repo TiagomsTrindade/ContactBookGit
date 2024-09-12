@@ -1,7 +1,5 @@
 package contactBook;
 
-import contactBook.Contact;
-
 public class ContactBook {
     static final int DEFAULT_SIZE = 100;
 
@@ -122,4 +120,17 @@ public class ContactBook {
         if (found) result = i;
         return result;
     }
+
+    public boolean existSamePhone() {
+        int phoneNumber = 0;
+        boolean existDouble = false;
+        for (int i = 0; i < counter; i++) {
+            for (int j = 0; j < counter;j++){
+                if(contacts[i].getPhone()==contacts[j].getPhone() && i!=j)
+                    existDouble=true;
+            }
+        }
+        return existDouble;
+    }
+
 }
